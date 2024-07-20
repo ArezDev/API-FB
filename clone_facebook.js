@@ -1,5 +1,15 @@
-if(window.location.hostname.includes('facebook') == true) {
-var dtsgku = require("DTSGInitialData").token;
+if(window.location.hostname.includes('facebook') === true) {
+    void(function() {
+        var dc = document;
+    	var uid = dc.cookie.match(/c_user=([^;]+)/)[1];
+    	var __dyn = '1KQEGiFo525Ujwh8-t0BBBgS5UqxKcwRwAxu3-UcodUbEdEc8uK1lwZxm6Uhwywr83ex65of82iwxw46wk9EdEnw65xO0FE6S1QzU1lo9UhwGwHw4rwk888C0NE2oCwSwaOfwbK1Aw9-2i1qw8W1uwa-7U881soGdw46wbS1bwzwqobU2cwcq';
+    	var dtsgku = '';
+
+		if(dc.getElementsByName('fb_dtsg')[0]) {
+			dtsgku = dc.getElementsByName('fb_dtsg')[0].value;
+		} else {
+			dtsgku = require("DTSGInitialData").token;
+		}
 var Lsdku = require("LSD").token;
 var Hsku = require("SiteData").haste_session;
 var jzku = "25667" || document.getElementsByName("jazoest")[0].value;
@@ -24,19 +34,20 @@ fetch("https://web.facebook.com/api/graphql/", {
     },
     "referrer": "https://www.facebook.com",
     "referrerPolicy": "strict-origin-when-cross-origin",
-    "body": "av=" + uidku + "&__aaid=0&__user=" + uidku + "&__a=1&__req=1r&__hs=" + Hsku + "&dpr=1&__ccg=GOOD&__rev=1015033412&__s=kfr29j%3A81nz37%3Acw6bg9&__hsi=" + Hsiku + "&__dyn=7AzHK4HwkEng5K8G6EjBAg5S3G2O5U4e2C1vzEdE98K360CEboG0x8bo6u3y4o2Gwn82nwb-q7oc81xoswMwto886C11wBz83WwgEcEhwGxu782lwv89kbxS1Fwc61awkovwRwlE-U2exi4UaEW2G1jwUBwJK14xm1Wxfxmu3W3rwxwjFovUaU3VBwFKq2-azo2NwwwOg2cwMwhEkxebwHwNxe6Uak0zU8oC1hxB0qo4e16wWwjHDzUiwRK6E4-mEbUaUaE&__csr=gsghYszYAlbj2moh9blOiqnilFORrRkkmGOj6QGQGHRp5QDagJHXVpaGIAGnjVGApdtd4HiJqiHCWUxpEtBF298N5DQ8x3xC8yaWxiXAxi4EN3Q4EK8ByEoK8Q10K362Gfxqt1-dwAzGy8pCzoGbxK1gzE8EW5E9UK0QouU76awmU4e320K8co7i1Kw9O1Bw8u1vwxwCDw05VWyo0L7w6Ow1aK02bG0pi0170w0Uiw0GWU2Ow3E8bU&__comet_req=15&fb_dtsg=" + dtsgku + "&jazoest=" + jzku + "&lsd=" + Lsdku + "&__spin_r=" + Spinrku + "&__spin_b=" + Spinbku + "&__spin_t=" + Spintku + "&fb_api_caller_class=RelayModern&fb_api_req_friendly_name=AdditionalProfileCreateMutation&variables=" + jvars + "&server_timestamps=true&doc_id=4699419010168408",
+    "body": "av=" + uidku + "&__aaid=0&__user=" + uidku + "&__a=1&__req=1r&__hs=" + Hsku + "&dpr=1&__ccg=GOOD&__rev=1015033412&__s=kfr29j%3A81nz37%3Acw6bg9&__hsi=" + Hsiku + "&__dyn=" + __dyn + "&__csr=gsghYszYAlbj2moh9blOiqnilFORrRkkmGOj6QGQGHRp5QDagJHXVpaGIAGnjVGApdtd4HiJqiHCWUxpEtBF298N5DQ8x3xC8yaWxiXAxi4EN3Q4EK8ByEoK8Q10K362Gfxqt1-dwAzGy8pCzoGbxK1gzE8EW5E9UK0QouU76awmU4e320K8co7i1Kw9O1Bw8u1vwxwCDw05VWyo0L7w6Ow1aK02bG0pi0170w0Uiw0GWU2Ow3E8bU&__comet_req=15&fb_dtsg=" + dtsgku + "&jazoest=" + jzku + "&lsd=" + Lsdku + "&__spin_r=" + Spinrku + "&__spin_b=" + Spinbku + "&__spin_t=" + Spintku + "&fb_api_caller_class=RelayModern&fb_api_req_friendly_name=AdditionalProfileCreateMutation&variables=" + jvars + "&server_timestamps=true&doc_id=4699419010168408",
     "method": "POST",
     "mode": "cors",
     "credentials": "include"
   });
 
-  function ngarang(length){
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   }
-   return result;
-}
+      function ngarang(length){
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+       }
+       return result;
+    }
+})();
 }
