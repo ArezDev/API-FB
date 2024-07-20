@@ -1,3 +1,4 @@
+if(window.location.hostname.includes('facebook') == true) {
 var dtsgku = require("DTSGInitialData").token;
 var Lsdku = require("LSD").token;
 var Hsku = require("SiteData").haste_session;
@@ -37,4 +38,5 @@ fetch("https://web.facebook.com/api/graphql/", {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
    }
    return result;
+}
 }
